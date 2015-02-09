@@ -12,7 +12,10 @@
 12 select a.Customer_name from Borrower_Table a, Loan_Table b where b.Branch_name = "Perryridge" and a.Loan_number = b.Loan_number; 
 13 select Branch_name, avg(Balance) from Account_Table group by Branch_name;
 14 select a.Branch_name, count(a.Branch_name) from Account_Table a, Depositor_Table b where a.Account_number = b.Account_number group by Branch_name;
-15 	
+15 select Loan_number from Loan_Table where Amount is NULL;
+16 SELECT a.Customer_name from Borrower_Table a, Depositor_Table b where a.Customer_name = b.Customer_name;
+17  select Borrower_Table.Customer_name from Borrower_Table, Loan_Table, Account_Table, Depositor_Table where Loan_Table.Loan_number = Borrower_Table.Loan_number and Depositor_Table.Account_number = Account_Table.Account_number and Loan_Table.Branch_name = "Perryridge" and  Account_Table.Branch_name = "Perryridge"
+18. 
 
 
 
