@@ -11,7 +11,8 @@
 11  select Customer_name from Customer_Table where Customer_street like "%North%";
 12 select a.Customer_name from Borrower_Table a, Loan_Table b where b.Branch_name = "Perryridge" and a.Loan_number = b.Loan_number; 
 13 select Branch_name, avg(Balance) from Account_Table group by Branch_name;
-14 
+14 select a.Branch_name, count(a.Branch_name) from Account_Table a, Depositor_Table b where a.Account_number = b.Account_number group by Branch_name;
+15 	
 
 
 
