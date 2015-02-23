@@ -16,8 +16,10 @@
 16 SELECT Customer_name from Borrower_Table where Loan_number in (select Loan_number from Borrower_Table 
 	where Customer_name in (select Customer_name from Depositor_Table INNER JOIN Account_Table 
 	on(Account_Table.Account_number = Depositor_Table.Account_number) and Account_Table.Branch_name = "Perryridge"));
-17 
-
+17  select Customer_name from Borrower_Table where Customer_name not in (SELECT Customer_name from Customer_Table);
+18 select Branch_name from Branch_Table where Assets > (select min(Assets) from Branch_Table where Branch_city = "Brooklyn");
+19 
+20 
 
 
 
